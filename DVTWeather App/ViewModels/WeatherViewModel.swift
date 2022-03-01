@@ -155,14 +155,14 @@ public class WeatherViewModel  {
     func getSaveWeatherForecast(){
         if WeatherDataUtils().getCurrentWeather() != nil {
             let result = WeatherDataUtils().getCurrentWeather()
-            let weatherData: WeatherData = result.weatherData
-            let forecastData = result.forecastData
+            let weatherData: WeatherData? = result.weatherData ?? nil
+            let forecastData: ForecastData? = result.forecastData ?? nil
             
             if weatherData != nil {
-                self.setWeatherData(weatherData: weatherData)
+                self.setWeatherData(weatherData: weatherData!)
             }
             if forecastData != nil {
-                self.setForecastData(forecastData: forecastData)
+                self.setForecastData(forecastData: forecastData!)
             }
            
             self.last_update.value = result.last_update

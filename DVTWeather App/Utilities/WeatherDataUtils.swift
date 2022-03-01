@@ -44,7 +44,7 @@ public class WeatherDataUtils {
         }
     }
     // GET CURRENT WEATHER
-    func getCurrentWeather()->(weatherData: WeatherData,forecastData: ForecastData,last_update: String){
+    func getCurrentWeather()->(weatherData: WeatherData?,forecastData: ForecastData?,last_update: String){
         var weatherData: WeatherData? = nil
         var forecastData: ForecastData? = nil
         var last_update = ""
@@ -59,8 +59,8 @@ public class WeatherDataUtils {
                        let last_update_date = data.value(forKey: "last_update") as! Date
                        
                        if( weather != "" && forecast != ""){
-                           weatherData = Utils.jsonDecode(jsonDataString: weather, type: WeatherData.self) as! WeatherData
-                           forecastData = Utils.jsonDecode(jsonDataString: forecast, type: ForecastData.self) as! ForecastData
+                           weatherData = Utils.jsonDecode(jsonDataString: weather, type: WeatherData.self) as? WeatherData
+                           forecastData = Utils.jsonDecode(jsonDataString: forecast, type: ForecastData.self) as? ForecastData
                           
                         
                        }
@@ -75,7 +75,7 @@ public class WeatherDataUtils {
                    print("Failed")
                }
        
-       return (weatherData!,forecastData!,last_update)
+       return (weatherData,forecastData,last_update)
 
    }
     // ADD FAVOURITE

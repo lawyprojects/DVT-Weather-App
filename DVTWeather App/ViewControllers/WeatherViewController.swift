@@ -37,10 +37,8 @@ class WeatherViewController: UIViewController {
         
         setWeatherData()
         manager.delegate = self
-        viewModel.getWeather(latitude: -1.2257908, longitude: 36.887666)
-        viewModel.getWeatherForecast(latitude: -1.2257908, longitude: 36.887666)
         
-        //getCurrentLocation()
+        getCurrentLocation()
     }
     
     private func registerTableViewCells() {
