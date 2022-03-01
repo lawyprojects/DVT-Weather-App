@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavouritesEntity" representedClassName="FavouritesEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="forecast" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weather" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="WeatherEntity" representedClassName="WeatherEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="current_weather" optional="YES" attributeType="String"/>
+        <attribute name="forecast" optional="YES" attributeType="String"/>
+        <attribute name="last_update" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <elements>
+        <element name="WeatherEntity" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="FavouritesEntity" positionX="-54" positionY="18" width="128" height="89"/>
+    </elements>
+</model>
